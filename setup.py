@@ -14,7 +14,7 @@ setup(
     author_email = "klaas_schuijtemaker@hotmail.com",
     description = "Basic ontology matching",
     license = "LGPL",
-    keywords = "rdf ontology matching linked data semantic web alignment",
+    keywords = "rdf ontology matching linked data semantic web alignment alignapy",
     url = "https://github.com/gateklaas/alignapy",   # project home page, if any
 )
 
