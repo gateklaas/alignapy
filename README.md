@@ -5,7 +5,7 @@ Basic ontology matching
 
 example
 =======
-
+```python
 from rdflib import Graph
 from alignapy import alignment
 
@@ -19,6 +19,7 @@ corr_list = alignment.align(graph1, graph2, threshold=0.9)
 
 for corr in corr_list:
     print corr.entity1, corr.relation, corr.entity2, corr.measure
+```
 
 install
 =======
