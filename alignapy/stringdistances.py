@@ -188,4 +188,4 @@ def smoa_distance(string1, string2):
     if string1 == None or string2 == None:
         return 1.0
     return 1.0 - _score(string1, string2)
-    
+

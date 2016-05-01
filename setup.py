@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
     name = "Alignapy",
-    version = "0.1",
+    version = "0.2",
     packages = find_packages(),
     namespace_packages=['alignapy'],
     include_package_data=True,
@@ -10,11 +10,11 @@ setup(
                 'nltk>=2.0',
                 'requests>=2.0.0',
     ],
-    author = "Mikel Emaldi",
-    author_email = "m.emaldi@deusto.es",
-    description = "Python port of some features of Alignapi (http://alignapi.gforge.inria.fr/)",
+    author = "Klaas Schuijtemaker",
+    author_email = "klaas_schuijtemaker@hotmail.com",
+    description = "Basic ontology matching",
     license = "LGPL",
-    keywords = "rdf ontology matching linked data semantic web",
-    url = "https://github.com/memaldi/alignapy",   # project home page, if any
+    keywords = "rdf ontology matching linked data semantic web alignment",
+    url = "https://github.com/gateklaas/alignapy",   # project home page, if any
 )
 
