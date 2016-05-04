@@ -19,9 +19,9 @@ def _correspondence_measure(graph1, graph2, object1, object2, method=stringdista
     if entity_name1 == None or entity_name2 == None:
         return 0.0
     else:
-        return 1.0 - method(entity_name1, entity_name2)
+        return method(entity_name1, entity_name2)
 
-def align(graph1, graph2, threshold=0.9, method=stringdistances.equal_distance):
+def align(graph1, graph2, threshold=0.0, method=stringdistances.equal_distance):
     corr_list = []
     
     # Create properties lists
@@ -40,7 +40,7 @@ def align(graph1, graph2, threshold=0.9, method=stringdistances.equal_distance):
     for i, class1 in zip(xrange(len(class_list1)), class_list1):
         for j, class2 in zip(xrange(len(class_list2)), class_list2):
             value = _correspondence_measure(graph1, graph2, class1, class2, method=method)
-            if value > threshold:
+            if value <= threshold:
                 corr = Correspondence(class1, class2, '=', value)
                 corr_list.append(corr)
             
@@ -48,7 +48,7 @@ def align(graph1, graph2, threshold=0.9, method=stringdistances.equal_distance):
     for i, prop1 in zip(xrange(len(prop_list1)), prop_list1):
         for j, prop2 in zip(xrange(len(prop_list2)), prop_list2):
             value = _correspondence_measure(graph1, graph2, prop1, prop2, method=method)
-            if value > threshold:
+            if value <= threshold:
                 corr = Correspondence(prop1, prop2, '=', value)
                 corr_list.append(corr)
             
@@ -56,7 +56,7 @@ def align(graph1, graph2, threshold=0.9, method=stringdistances.equal_distance):
     for i, ind1 in zip(xrange(len(ind_list1)), ind_list1):
         for j, ind2 in zip(xrange(len(ind_list2)), ind_list2):
             value = _correspondence_measure(graph1, graph2, ind1, ind2, method=method)
-            if value > threshold:
+            if value <= threshold:
                 corr = Correspondence(ind1, ind2, '=', value)
                 corr_list.append(corr)
 
