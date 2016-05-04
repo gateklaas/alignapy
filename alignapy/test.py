@@ -30,7 +30,7 @@ graph2 = util.graph_from_uri('http://purl.org/dc/terms/')
 print 'graph sizes:', len(graph1), len(graph2)
 print 'num classes:', len(util.load_classes(graph1)), len(util.load_classes(graph2))
 
-corr_list = alignment.align(graph1, graph2, threshold=0.8, method=jwnl_basic_synonym_distance)
+corr_list = alignment.align(graph1, graph2, threshold=0.1, method=jwnl_basic_synonym_distance)
 
 print 'num correspondences:', len(corr_list)
 
